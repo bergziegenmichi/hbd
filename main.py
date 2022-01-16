@@ -21,15 +21,16 @@ def check():
 def print_sequence(s: str, t: int):
     s_split = s.split("\n")
     for s_current in s_split:
-        print("\n"*s_current.count("+"), end="")
-        s_current = s_current.replace("+","")
+        print("\n" * s_current.count("+"), end="")
+        s_current = s_current.replace("+", "")
         for line in range(11):
             for char in s_current:
                 print(letters[char][t][line], end="  ")
             print("")
         print("")
 
-def clean():
+
+def clear():
     if os.name == "nt":
         os.system("cls")
     else:
@@ -41,7 +42,7 @@ def print_alternating(s: str, d: int):
     t = 0
     try:
         while True:
-            clean()
+            clear()
             print_sequence(s, t)
             sleep(d)
             t = t_order[(t_order.index(t) + 1) % 4]
@@ -325,7 +326,7 @@ letter_d = [
      r"    \__\::/    ",
      r"        ~~     "]
 ]
-letter_space = [[" "*8 for _ in range(11)] for _ in range(4)]
+letter_space = [[" " * 8 for _ in range(11)] for _ in range(4)]
 letter_singel_space = [[" " for _ in range(11)] for _ in range(4)]
 letter_single_newline = [["\n" for _ in range(11)] for _ in range(4)]
 letters = {
@@ -339,23 +340,19 @@ letters = {
     "#": letter_singel_space
     # + for a single newline
 }
-
-print("bitte vollste konzentration?")
+clear()
 print("terminal fullscreen?")
 print("alle bereit?")
-input("dann drück enter")
+print("gleich gehts los (15 sekunden)")
+print("wenn nicht strg-c und erneut ausführen")
+sleep(12)
+print(3)
+sleep(1)
+print(2)
+sleep(1)
+print(1)
+sleep(1)
 
-print_alternating("+"*6+"   happy\n"+"#"*3+"   bday", 1)
+print_alternating("+" * 6 + "   happy\n" + "#" * 3 + "   bday", 1)
 
-#check()
-
-
-
-
-
-
-
-
-
-
-
+# check()
