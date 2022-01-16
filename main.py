@@ -340,6 +340,11 @@ letters = {
     # + for a single newline
 }
 
+print("bitte vollste konzentration?")
+print("terminal fullscreen?")
+print("alle bereit?")
+input("dann drück enter")
+
 print_alternating("+"*6+"   happy\n"+"#"*3+"   bday", 1)
 
 #check()
