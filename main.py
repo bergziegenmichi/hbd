@@ -47,7 +47,8 @@ def print_alternating(s: str, d: int):
             sleep(d)
             t = t_order[(t_order.index(t) + 1) % 4]
     except KeyboardInterrupt:
-        pass
+        print("")
+        print("Alles Gute!! ;)")
 
 
 letter_h = [
@@ -340,18 +341,61 @@ letters = {
     "#": letter_singel_space
     # + for a single newline
 }
+
+
+def wait(x):
+    while x > 0:
+        sleep(1)
+        x -= 1
+        print(x)
+
+
 clear()
-print("terminal fullscreen?")
-print("alle bereit?")
-print("gleich gehts los (15 sekunden)")
-print("wenn nicht strg-c und erneut ausführen")
-sleep(12)
+print("Terminal fullscreen?")
+print("Alle bereit?")
+print("Gleich gehts los (15 Sekunden)")
+print("Wenn nicht strg-c und nochmal starten")
+sleep(4)
+wait(11)
+clear()
+
+
+def cursed_print(s: str):
+    for char in s:
+        if char == ".":
+            sleep(0.5)
+            continue
+        elif char == ",":
+            sleep(0.2)
+            continue
+        elif char == "-":
+            sleep(0.05)
+            continue
+        print(char, end="", flush=True)
+
+
+cprint = cursed_print
+cprint("\n,"*10+".")
+cprint("H.a.p.y.\b.py\b.y")
+cprint(". .")
+cprint(
+    "b.\b \b.B.y.r..-\b \b,,\b \b.-i.r,-h,-t,-d.,a.y.\b \b,\b \b-\b \b-\b \b-\b \b-\b \b..r.t.h.d.a.y-y,,\b \b.!")
+cprint("... , , , , ,.:..)")
+
+sleep(2)
+
+cprint("\n,\n,\n")
+cprint(".")
+cprint("A.l.l.w,\b \b.,e.-s. .,G.u.t.e..\n.\n.u-s-w.,")
+print("")
+print("Das ersparen wir uns ;)")
+sleep(3)
+print("Aber Achtung")
+sleep(1)
+print("Noch nicht aus")
+sleep(2)
 print(3)
-sleep(1)
-print(2)
-sleep(1)
-print(1)
-sleep(1)
+wait(3)
 
 print_alternating("+" * 6 + "   happy\n" + "#" * 3 + "   bday", 1)
 
